@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 20px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <img id="gifImage" src="" 
+         height="100%" 
+         width="100%" 
+         alt="صورة">    
+         <script>
+            window.addEventListener('message', function(event) {
+                let data = event.data;
+                if (data.action === "updateGif") {
+                    document.getElementById("gifImage").src = data.url;
+                }
+            });
+        </script>
+</body>
+</html>
